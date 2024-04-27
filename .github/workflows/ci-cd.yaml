@@ -4,7 +4,6 @@ name: CI/CD
 on: push
 
 jobs:
-
   push-to-gcr:
     needs: test
     name: Build Container and Push
