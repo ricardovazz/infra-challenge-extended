@@ -3,8 +3,8 @@ name: CI/CD
 
 on: push
 
-jobs:
-  push-to-gcr:
+job:
+  push:
     name: Build Container and Push
     runs-on: ubuntu-latest
     steps:
