@@ -1,0 +1,8 @@
+service:
+  port: 8080
+  tlsCertificate: /etc/tls/tls.crt
+  tlsPrivateKey: /etc/tls/tls.key
+
+metrics:
+  port: 2112
+  endpoint: "/metrics"

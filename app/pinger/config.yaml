@@ -1,0 +1,3 @@
+ponger:
+  url: https://pong:8080
+  acceptCert: /app/cert.pem
