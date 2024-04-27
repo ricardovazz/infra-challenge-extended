@@ -3,8 +3,9 @@ name: CI/CD
 
 on: push
 
-job:
-  push:
+jobs:
+
+  push-to-gcr:
     name: Build Container and Push
     runs-on: ubuntu-latest
     steps:
@@ -23,10 +24,8 @@ job:
     - name: Build ponger image
       run: docker build -t ponger:latest app/ponger
     - name: Build and push Docker image
-      run: |
-        docker push ponger:latest
-   - name: Build pinger image
+      run: docker push ponger:latest
+    - name: Build pinger image
       run: docker build -t pinger:latest app/pinger
     - name: Build and push Docker image
-      run: |
-        docker push pinger:latest
+      run: docker push pinger:latest
