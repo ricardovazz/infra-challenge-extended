@@ -37,15 +37,15 @@ helm show values istio/base --version 1.17.1 > helm-defaults/istio-base-default.
 
 - or 
 
-    resource "helm_release" "nginx" {
-      name       = "nginx"
-      repository = "https://charts.bitnami.com/bitnami"
-      chart      = "nginx"
-    
-      values = [
-        file("${path.module}/nginx-values.yaml")
-      ]
-    }
+            resource "helm_release" "nginx" {
+              name       = "nginx"
+              repository = "https://charts.bitnami.com/bitnami"
+              chart      = "nginx"
+            
+              values = [
+                file("${path.module}/nginx-values.yaml")
+              ]
+            }
 
 # helm chart/structure
 
