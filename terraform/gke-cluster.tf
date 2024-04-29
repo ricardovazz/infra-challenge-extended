@@ -1,3 +1,5 @@
+data "google_client_config" "default" {}
+
 resource "google_container_cluster" "primary" {
   name     = "my-gke-cluster"
   location = "europe-west2-c"
