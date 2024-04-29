@@ -16,24 +16,24 @@ helm show values istio/base --version 1.17.1 > helm-defaults/istio-base-default.
 # helm
 - The helm provider block establishes your identity to your Kubernetes cluster
 
-    provider "helm" {
-      kubernetes {
-        host                   = "https://${google_container_cluster.primary.endpoint}"
-        token                  = data.google_client_config.default.access_token
-        cluster_ca_certificate = base64decode(google_container_cluster.primary.master_auth.0.cluster_ca_certificate)
-      }
-    }
+        provider "helm" {
+          kubernetes {
+            host                   = "https://${google_container_cluster.primary.endpoint}"
+            token                  = data.google_client_config.default.access_token
+            cluster_ca_certificate = base64decode(google_container_cluster.primary.master_auth.0.cluster_ca_certificate)
+          }
+        }
 
 - The helm_release resource deploys the nginx Helm chart to your Kubernetes cluster
 
-    resource "helm_release" "example" {
-      name  = "my-local-chart"
-      chart = "./helm" #assuming we have a helm folder with a values.yaml
-    
-      depends_on = [
-        google_container_cluster.primary
-      ]
-    }
+        resource "helm_release" "example" {
+          name  = "my-local-chart"
+          chart = "./helm" #assuming we have a helm folder with a values.yaml
+        
+          depends_on = [
+            google_container_cluster.primary
+          ]
+        }
 
 - or 
 
