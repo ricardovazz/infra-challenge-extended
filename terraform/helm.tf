@@ -10,7 +10,7 @@ provider "helm" {
 
 resource "helm_release" "example" {
   name  = "my-local-chart"
-  chart = "./helm-chart"
+  chart = "../helm-chart"
 
   depends_on = [
     google_container_cluster.primary
