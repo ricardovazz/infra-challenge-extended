@@ -12,6 +12,8 @@ helm search repo istio/base (check version)
 
 helm show values istio/base --version 1.17.1 > helm-defaults/istio-base-default.yaml
 
+
+# helm
 - The helm provider block establishes your identity to your Kubernetes cluster
 
     provider "helm" {
