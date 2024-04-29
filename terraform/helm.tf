@@ -1,3 +1,5 @@
+data "google_client_config" "default" {}
+
 provider "helm" {
   kubernetes {
     host                   = "https://${google_container_cluster.primary.endpoint}"
